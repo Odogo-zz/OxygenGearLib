@@ -1,0 +1,19 @@
+# This is the OxygenGearLib configuration file.
+# There's not a whole lot in here, mostly just empty space.
+# There are a few things, but not to much.
+
+# Allows the plugin to send logs about saving/restoring player data to/from the storage.
+# Default: true
+post-logs: true
+
+# Change the display of the GUI for /helmet.
+inventory-display:
+
+   # Change this value to "custom" to allow the plugin to use your display and not the default.
+   # Default: default
+   # Possible: [default, custom]
+   display-type: default
+   
+   # Chat colors can be used!
+   # No limits, but the inventory is small so that might limit you.
+   display: ""

@@ -1,0 +1,10 @@
+main: me.odogo.oxygengearlib.OxygenGearLib
+name: OxygenGearLib
+version: 1.0.0
+author: Odogo
+
+commands:
+   oxygengear:
+      description: Opens a GUI to place "wearable" items for its this plugin's dependents.
+      usage: /<command>
+      aliases: [ogear]
