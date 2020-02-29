@@ -26,11 +26,8 @@ public class OxygenGearAPI {
 		UUID uuid = player.getUniqueId();
 
 		ArrayList<ItemStack> contents = new ArrayList<ItemStack>();
-		contents.add(inv.getItem(11));
-		contents.add(inv.getItem(12));
-		contents.add(inv.getItem(13));
-		contents.add(inv.getItem(14));
-		contents.add(inv.getItem(15));
+
+		contents.add(inv.getItem(11)); contents.add(inv.getItem(12)); contents.add(inv.getItem(13)); contents.add(inv.getItem(14)); contents.add(inv.getItem(15));
 
 		data.set(uuid + ".contains", contents);
 
@@ -60,22 +57,13 @@ public class OxygenGearAPI {
 		if(contents == null) {
 			if(plugin.getConfig().getBoolean("post-logs")) {
 				plugin.getLogger().info("Restored " + uuid + " or " + player.getName() + "'s nullified data.");
-
-				inv.setItem(11, null);
-				inv.setItem(12, null);
-				inv.setItem(13, null);
-				inv.setItem(14, null);
-				inv.setItem(15, null);
-
-				return;
 			}
+
+			inv.setItem(11, null); inv.setItem(12, null); inv.setItem(13, null); inv.setItem(14, null); inv.setItem(15, null);
+			return;
 		}
 
-		inv.setItem(11, contents.get(0));
-		inv.setItem(12, contents.get(1));
-		inv.setItem(13, contents.get(2));
-		inv.setItem(14, contents.get(3));
-		inv.setItem(15, contents.get(4));
+		inv.setItem(11, contents.get(0)); inv.setItem(12, contents.get(1)); inv.setItem(13, contents.get(2)); inv.setItem(14, contents.get(3)); inv.setItem(15, contents.get(4));
 
 		if(plugin.getConfig().getBoolean("post-logs")) {
 			plugin.getLogger().info("Successfully restored " + uuid + " or " + player.getName() + "'s gear data.");
