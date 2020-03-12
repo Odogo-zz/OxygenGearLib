@@ -1,6 +1,6 @@
 main: me.odogo.oxygengearlib.OxygenGearLib
 name: OxygenGearLib
-version: 1.0.0
+version: 1.0.2
 author: Odogo
 
 commands:
