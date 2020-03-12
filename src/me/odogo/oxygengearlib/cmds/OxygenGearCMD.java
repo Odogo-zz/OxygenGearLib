@@ -17,8 +17,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.odogo.oxygengearlib.OxygenGearAPI;
 import me.odogo.oxygengearlib.OxygenGearLib;
+import me.odogo.oxygengearlib.api.OxygenGearAPI;
 
 public class OxygenGearCMD implements CommandExecutor, Listener {
 
@@ -52,6 +52,7 @@ public class OxygenGearCMD implements CommandExecutor, Listener {
 		Inventory i = e.getClickedInventory();
 		ItemStack cursor = e.getCursor();
 		ItemStack clickedOn = e.getCurrentItem();
+		String title = "";
 
 		int slot = e.getSlot();
 
@@ -59,8 +60,12 @@ public class OxygenGearCMD implements CommandExecutor, Listener {
 			return;
 		}
 
-		if(i.getTitle().equals(ChatColor.BLACK + "[OxygenGearLib] GUI")
-				|| i.getTitle().equals(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("inventory-display.display")))) {
+		title = e.getView().getTitle();
+
+		if(title == "" || title == null) { return; }
+
+		if(title.equals(ChatColor.BLACK + "[OxygenGearLib] GUI")
+				|| title.equals(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("inventory-display.display")))) {
 
 			if(!(slot >= 11 && slot <= 15)) {
 				e.setCancelled(true);
@@ -130,8 +135,13 @@ public class OxygenGearCMD implements CommandExecutor, Listener {
 	public void onInvClose(InventoryCloseEvent e) {
 		Player player = (Player) e.getPlayer();
 		Inventory i = e.getInventory();
+		String title = "";
 
-		if(i.getTitle().equals(ChatColor.BLACK + "[OxygenGearLib] GUI") || i.getTitle().equals(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("inventory-display.display")))) {
+		title = e.getView().getTitle();
+
+		if(title == "" || title == null) { return; }
+
+		if(title.equals(ChatColor.BLACK + "[OxygenGearLib] GUI") || title.equals(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("inventory-display.display")))) {
 			OxygenGearAPI.saveContents(i, player);
 		}
 	}

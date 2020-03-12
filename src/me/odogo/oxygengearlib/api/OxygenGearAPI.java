@@ -1,4 +1,4 @@
-package me.odogo.oxygengearlib;
+package me.odogo.oxygengearlib.api;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +9,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+
+import me.odogo.oxygengearlib.OxygenGearLib;
 
 public class OxygenGearAPI {
 
